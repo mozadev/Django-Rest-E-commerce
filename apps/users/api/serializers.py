@@ -13,7 +13,7 @@ class TestUserSerializer(serializers.Serializer):
     def validate_name(self, value):
 
         #custom validation
-        if 'jose' in value:
+        if 'ce' in value:
             raise serializers.ValidationError("This name is not allowed")
            
         return value
@@ -30,4 +30,14 @@ class TestUserSerializer(serializers.Serializer):
         return value
 
     def validate(self, data):
-        return data  
+        return data
+
+    def create(self, validated_data):
+        return User.objects.create(** validated_data) 
+    
+
+
+
+
+
+    
