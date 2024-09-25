@@ -21,7 +21,7 @@ def user_api_view(request):
         test_user = TestUserSerializer(data = test_data, context = test_data)
         if test_user.is_valid():
             user_instance = test_user.save()
-            print(user_instanfce)
+            print(user_instance)
         else:
             print(test_user.errors)
         
