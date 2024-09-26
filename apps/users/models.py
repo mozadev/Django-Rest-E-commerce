@@ -50,6 +50,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     def __str__(self):
         return f'{self.name},{self.last_name},{self.username}'
+    
+    def save(self, *args, **kwargs):
+        print("hello")
 
 
     
